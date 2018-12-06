@@ -1,0 +1,5 @@
+<?php
+
+echo 'PRINT DE LES TAULES DE LES 2 TEMPORADES!';
+
+?>
