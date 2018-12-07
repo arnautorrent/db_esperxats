@@ -1,0 +1,12 @@
+.esquerra {
+    background-color: black;
+}
+
+.dreta {
+    background-color: blue;
+}
+
+td {
+    text-align: center;
+    background-color: yellow;
+}
