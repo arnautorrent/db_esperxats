@@ -10,10 +10,11 @@ class Estadistiques extends CI_Controller {
 
     public function comparacio($any = '2018')
     {
+        $data['castells'] = $this->castells_consultats();
         $data['resum_temp_comp'] = $this->estadistiques_model->get_temporada($any);
         $data['resum_temp_act'] = $this->estadistiques_model->get_temporada();
-        $data['temporada_actual'] = $this->genera_plantilla();
-        $data['temporada_comparada'] = $this->genera_plantilla();
+        $data['temporada_actual'] = $this->genera_plantilla($data['castells']);
+        $data['temporada_comparada'] = $this->genera_plantilla($data['castells']);
         $data['temporada_actual'] = $this->omplir_plantilla($data['resum_temp_act'],$data['temporada_actual']);
         $data['temporada_comparada'] = $this->omplir_plantilla($data['resum_temp_comp'],$data['temporada_comparada']);
 
@@ -24,11 +25,9 @@ class Estadistiques extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function genera_plantilla()
+    public function genera_plantilla($castells)
     {
-        $castells = array('3d7','4d7','pd5','2d6','3d6ps','5d6','7d6','4d6a','3d6a','3d6','4d6');
         $resultats = array('d','c','i','id');
-
         $plantilla = array();
         foreach ($castells as $fila){
             $plantilla[$fila] = array();
@@ -48,5 +47,11 @@ class Estadistiques extends CI_Controller {
             }
         }
         return $temporada;
+    }
+
+    public function castells_consultats()
+    {
+        $castells = array('3d7','4d7','pd5','2d6','3d6ps','5d6','7d6','4d6a','3d6a','3d6','4d6');
+        return $castells;
     }
 }
