@@ -11,13 +11,13 @@
                     <th> ID </th>
                 </tr>
                 <?php
-                foreach ($castells as $castell){
+                foreach ($temporada_actual as $castell => $resultats){
                     echo '<tr>';
                         echo '<th>' . $castell . '</th>';
-                        echo '<td>'. $temporada_actual{$castell}{"d"} .'</td>';
-                        echo '<td>'. $temporada_actual{$castell}{"c"} .'</td>';
-                        echo '<td>'. $temporada_actual{$castell}{"i"} .'</td>';
-                        echo '<td>'. $temporada_actual{$castell}{"id"} .'</td>';
+                        echo '<td>' . $resultats{"d"} . '</td>';
+                        echo '<td>' . $resultats{"c"} . '</td>';
+                        echo '<td>' . $resultats{"i"} . '</td>';
+                        echo '<td>' . $resultats{"id"} . '</td>';
                     echo '</tr>';
                 }
                 ?>
@@ -29,19 +29,19 @@
                 <caption> Temporada Comparada</caption>
                 <tr>
                     <th> Castell </th>
-                    <th> Descarregat </th>
-                    <th> Carregat </th>
-                    <th> Intent </th>
-                    <th> Intent Desmuntat </th>
+                    <th> D </th>
+                    <th> C </th>
+                    <th> I </th>
+                    <th> ID </th>
                 </tr>
                 <?php
-                foreach ($castells as $castell){
+                foreach ($temporada_comparada as $castell => $resultats){
                     echo '<tr>';
-                    echo '<th>' . $castell . '</th>';
-                    echo '<td>'. $temporada_comparada{$castell}{"d"} .'</td>';
-                    echo '<td>'. $temporada_comparada{$castell}{"c"} .'</td>';
-                    echo '<td>'. $temporada_comparada{$castell}{"i"} .'</td>';
-                    echo '<td>'. $temporada_comparada{$castell}{"id"} .'</td>';
+                        echo '<th>' . $castell . '</th>';
+                        echo '<td>' . $resultats{"d"} . '</td>';
+                        echo '<td>' . $resultats{"c"} . '</td>';
+                        echo '<td>' . $resultats{"i"} . '</td>';
+                        echo '<td>' . $resultats{"id"} . '</td>';
                     echo '</tr>';
                 }
                 ?>
