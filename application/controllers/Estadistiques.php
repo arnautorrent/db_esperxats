@@ -8,16 +8,22 @@ class Estadistiques extends CI_Controller {
         $this->load->helper('url_helper');
     }
 
-    public function comparacio($any = '2018')
+    public function comparacio($any = NULL)
     {
-        $data['resum_temp_comp'] = $this->estadistiques_model->get_temporada($any);
-        $data['resum_temp_act'] = $this->estadistiques_model->get_temporada();
+        $any_actual = date("Y");
+        if (isset($any)){
+            $any_comp = $any;
+        }
+        else{
+            $any_comp = $any_actual - 1;
+        }
+
+        $data['resum_temp_act'] = $this->estadistiques_model->get_temporada($any_actual);
+        $data['resum_temp_comp'] = $this->estadistiques_model->get_temporada($any_comp);
         $data['temporada_actual'] = $this->genera_plantilla();
         $data['temporada_comparada'] = $this->genera_plantilla();
         $data['temporada_actual'] = $this->omplir_plantilla($data['resum_temp_act'],$data['temporada_actual']);
         $data['temporada_comparada'] = $this->omplir_plantilla($data['resum_temp_comp'],$data['temporada_comparada']);
-
-        $data['title'] = 'Comparació Temporades 2018 - ' . $any;
 
         $this->load->view('templates/header', $data);
         $this->load->view('estadistiques/comp_temp', $data);

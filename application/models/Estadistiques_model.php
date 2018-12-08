@@ -6,7 +6,7 @@ class Estadistiques_model extends CI_Model {
         $this->load->database();
     }
 
-    public function get_temporada($any = '2018')
+    public function get_temporada($any = NULL)
     {
         $query = $this->db->query("CALL proc_consultaResultatCastell('".$any."-01-01','".$any."-12-31')");
         $resum = $query->result();

@@ -1,12 +1,11 @@
-.esquerra {
-    background-color: black;
-}
-
-.dreta {
-    background-color: blue;
-}
+/*
+GROC:       #FEF2AB
+VERD:       #CAE7AC
+VERMELL:    #FD7269
+BLAU:       #A4E1FD
+*/
 
 td {
     text-align: center;
-    background-color: yellow;
+    background-color: #FEF2AB;
 }
