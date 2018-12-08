@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d2b0bf10-c0a3-4d31-811c-3a09f9cd8d5a" name="Esperxats" url="http://dades.ccesperxats.cat">
+        <fileTransfer host="ftp.ccesperxats.cat" port="21" rootFolder="/dades">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
