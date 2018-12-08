@@ -1,9 +1,13 @@
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <h1 class="text-align-center">COMPARACIÓ TEMPORADES</h1>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm">
-            <h1>Temporada Actual</h1>
+            <h1 class="text-align-center"><?php echo $any_actual ?></h1>
             <table class="table table-bordered">
-                <caption> Temporada Actual</caption>
                 <tr>
                     <th> Castell </th>
                     <th> D </th>
@@ -67,9 +71,8 @@
         </div>
 
         <div class="col-sm">
-            <h1>Temporada Comparada</h1>
+            <h1 class="text-align-center"><?php echo $any_comp ?></h1>
             <table class="table table-bordered">
-                <caption> Temporada Comparada</caption>
                 <tr>
                     <th> Castell </th>
                     <th> D </th>

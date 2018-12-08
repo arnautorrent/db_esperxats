@@ -18,6 +18,9 @@ class Estadistiques extends CI_Controller {
             $any_comp = $any_actual - 1;
         }
 
+        $data['any_actual'] = $any_actual;
+        $data['any_comp'] = $any_comp;
+
         $data['resum_temp_act'] = $this->estadistiques_model->get_temporada($any_actual);
         $data['resum_temp_comp'] = $this->estadistiques_model->get_temporada($any_comp);
         $data['temporada_actual'] = $this->genera_plantilla();

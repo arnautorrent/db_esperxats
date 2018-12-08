@@ -5,7 +5,15 @@ VERMELL:    #FD7269
 BLAU:       #A4E1FD
 */
 
+.text-align-center{
+    text-align: center;
+}
+
 td {
     text-align: center;
     background-color: #FEF2AB;
+}
+
+.table-bordered td, .table-bordered th{
+    border-color: #000000;
 }
