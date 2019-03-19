@@ -1,4 +1,8 @@
 <?php
+/**
+ * @property Estadistiques_model $estadistiques_model
+ */
+
 class Estadistiques extends CI_Controller {
 
     public function __construct()
@@ -21,8 +25,8 @@ class Estadistiques extends CI_Controller {
         $data['any_actual'] = $any_actual;
         $data['any_comp'] = $any_comp;
 
-        $data['resum_temp_act'] = $this->estadistiques_model->get_temporada_data($any_actual);
-        $data['resum_temp_comp'] = $this->estadistiques_model->get_temporada_data($any_comp);
+        $data['resum_temp_act'] = $this->estadistiques_model->get_temporada_data_actual($any_actual);
+        $data['resum_temp_comp'] = $this->estadistiques_model->get_temporada_data_actual($any_comp);
         $data['temporada_actual'] = $this->genera_plantilla();
         $data['temporada_comparada'] = $this->genera_plantilla();
         $data['temporada_actual'] = $this->omplir_plantilla($data['resum_temp_act'],$data['temporada_actual']);
